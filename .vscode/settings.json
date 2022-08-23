@@ -1,0 +1,95 @@
+{
+    // Change path to your system, use `which` to find the location of the executables
+    // Somehow, cortex-debug wants absolute path, even if the package is present in $PATH
+    // "cortex-debug.armToolchainPath": "/opt/gcc-arm-none-eabi-11.2/bin",
+    // "cortex-debug.JLinkGDBServerPath": "/usr/bin/JLinkGDBServerCLExe",
+    // "nixEnvSelector.nixFile": "${workspaceRoot}/flake.nix",
+    // "cmake.configureArgs": [
+    //     "-DPROJECT_NAME=firmware",
+    //     "-DDUMP_ASM=OFF"
+    // ],
+    "cmake.generator": "Unix Makefiles",
+    "cortex-debug.variableUseNaturalFormat": false,
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/include"
+    ],
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "telemetry.enableCrashReporter": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "githubPullRequests.telemetry.enabled": false,
+    "cmake.ctest.parallelJobs": 4,
+    "files.associations": {
+        "iostream": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "cinttypes": "cpp",
+        "cstring": "cpp",
+        "bit": "cpp"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        }
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "C_Cpp.autocompleteAddParentheses": true,
+    //Unix Makefiles or Ninja
+    //"cmake.generator": "Ninja" 
+}
