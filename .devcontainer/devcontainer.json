@@ -1,0 +1,61 @@
+{
+	"name": "Embedded Programming Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"USERNAME": "aluno",
+			"UID": "1001", //atualize para o uid do teu usuário
+			"GID": "1001",
+			"GROUPNAME": "aluno"
+		}
+	},
+	"runArgs": [
+		"--privileged" //precisa para acessar os dispositivos usb
+	], 
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"java.jdt.ls.java.home": "/usr/lib/jvm/java",
+		"java.configuration.runtimes": [
+			{
+				"default": true,
+				"name": "JavaSE-11",
+				"path": "/usr/lib/jvm/java"
+			}
+		]
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"gruntfuggly.todo-tree",
+		"vscode-snippet.snippet",
+		"spmeesseman.vscode-taskexplorer",
+		"ms-vscode.cpptools-extension-pack",
+		"austin.code-gnu-global",
+		"cheshirekow.cmake-format",
+		"ms-python.python",
+		"vadimcn.vscode-lldb",
+		"ms-vscode.makefile-tools",
+		"marus25.cortex-debug",
+		"Swellaby.rust-pack",
+		"tomoki1207.pdf",
+		"marus25.cortex-debug-dp-stm32f4"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+	"remoteEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"mounts": [
+		"source=${localEnv:HOME}/.ssh,target=/hom/aluno/.ssh,type=bind",
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+		//		       "source=/dev/dri,target=/dev/dri,type=bind",
+		"source=/dev,target=/dev,type=bind",
+//		"source=/etc/group,target=/etc/group,type=bind",
+//		"source=/etc/passwd,target=/etc/passwd,type=bind",
+//		"source=/etc/shadow,target=/etc/shadow,type=bind"
+	],
+	"remoteUser": "aluno"
+}
