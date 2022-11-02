@@ -92,7 +92,7 @@ auto CPU::cycle() -> void {
 					m_registers.v(x) -= m_registers.v(y);
 					m_registers.program_counter() += 2;
 					break;
-				case 0x0006: // Vx >>= 1 (VF = LSB)
+				case 0x0006: // Vx = Vy >> 1 (VF = LSB)
 					m_registers.v(0xF) = m_registers.v(y) & 0x1;
 					m_registers.v(x) = m_registers.v(y) >> 1;
 					m_registers.program_counter() += 2;
@@ -102,7 +102,7 @@ auto CPU::cycle() -> void {
 					m_registers.v(x) = m_registers.v(y) - m_registers.v(x);
 					m_registers.program_counter() += 2;
 					break;
-				case 0x000E: // Vx <<= 1 (VF = MSB)
+				case 0x000E: // Vx = Vy << 1 (VF = MSB)
 					m_registers.v(0xF) = m_registers.v(y) >> 7;
 					m_registers.v(x) = m_registers.v(y) << 1;
 					m_registers.program_counter() += 2;
