@@ -16,7 +16,7 @@ class SfmlEmulator : public Emulator {
 	};
 
 	static constexpr auto SCALE = 24;
-	static constexpr auto STEPS_PER_CYCLE = 10;
+	static constexpr auto STEPS_PER_CYCLE = 8;
 
 	static constexpr std::array KEYMAP = {
 		sf::Keyboard::Key::X,    sf::Keyboard::Key::Num1, sf::Keyboard::Key::Num2, sf::Keyboard::Key::Num3,
